@@ -38,6 +38,7 @@ def upload():
             img.save(filename)
             client.upload(filename, filename)
             msg = 'Uploading file: ' + filename
+            os.remove(filename)
 
     return render_template('index.html', msg=msg)
 
